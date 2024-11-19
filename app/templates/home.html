@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+    <div class="container-home">
+        <h1>Welcome to Heart Disease Prediction System</h1>
+        <p class="description-home">This application helps predict the risk of heart disease based on clinical data provided by the user. It is developed as part of a student thesis project aimed at supporting early detection of heart disease risk using neural networks.</p>
+        <a class="button" href="{{ url_for('main.input_data') }}">Start Prediction</a>
+
+        <footer class="author-footer">
+            Developed by Fernando - 2401987033
+        </footer>
+    </div>
+</body>
+</html>

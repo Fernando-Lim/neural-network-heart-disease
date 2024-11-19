@@ -1,0 +1,320 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f6f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 1rem;
+}
+
+.container-input {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    position: relative; /* Added for loading spinner positioning */
+    overflow-y: auto;
+}
+
+.container-home, .container-result {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    overflow-y: auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-bottom: 1rem;
+}
+
+.description-home {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.back-button-arrow {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 0.5rem 1rem;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.button, .back-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover, .back-button:hover, .back-button-arrow:hover {
+    background-color: #0056b3;
+}
+
+.author-footer {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+input[type="number"], select {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.2s ease;
+}
+
+/* Hide the number input spinner arrows */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"]:focus, select:focus {
+    border-color: #007bff;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 0.7rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Loading spinner */
+.loading {
+    display: none;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.spinner {
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.not-at-risk, .at-risk {
+    font-size: 1.2rem;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+}
+
+.not-at-risk {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+.at-risk {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+
+.explanation-container {
+    text-align: left;
+    margin-top: 1.5rem;
+}
+
+.explanation-item {
+    margin-bottom: 1rem;
+}
+
+.explanation-item span {
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* SHAP plot */
+.shap-plot-result {
+    max-width: 100%;  /* Make the image responsive */
+    height: auto;  /* Maintain aspect ratio */
+    margin: 1rem 0;
+    border-radius: 5px;
+}
+
+/* Responsive adjustments */
+/* For iPhone SE, iPhone 5, Pixel 2, and other small smartphones */
+@media (max-width: 375px) {
+    h1 {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 0.8rem;
+    }
+
+    .container-input {
+        margin-top: auto;
+        padding: 0.8rem;
+    }
+
+    .container-home, .container-result {
+        padding: 0.8rem;
+    }
+
+    input[type="number"], select {
+        font-size: 0.7rem;
+        padding: 0.4rem;
+    }
+
+    .back-button-arrow {
+        padding: 0.3rem 0.4rem;
+        font-size: 0.7rem;
+    }
+
+    .button, .back-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.7rem;
+    }
+
+    input[type="submit"] {
+        padding: 0.5rem;
+        font-size: 0.7rem;
+    }
+}
+
+/* For iPhone 11, iPhone XR, Galaxy S9/S10, and other medium-sized smartphones */
+@media (max-width: 414px) {
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    .container-input {
+        margin-top: auto;
+        padding: 1.2rem;
+    }
+
+    .container-home, .container-input, .container-result {
+        padding: 1.2rem;
+    }
+
+    input[type="number"], select {
+        font-size: 0.9rem;
+    }
+
+    .back-button-arrow {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.8rem;
+    }
+
+    .button, .back-button {
+        padding: 0.6rem 1.3rem;
+        font-size: 0.9rem;
+    }
+
+    input[type="submit"] {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* For Google Pixel 5, Samsung Galaxy S20, and similar devices */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.3rem;
+    }
+
+    h2 {
+        font-size: 0.9rem;
+    }
+
+    .container-input {
+        margin-top: auto;
+        padding: 1rem;
+    }
+
+    .container-home, .container-result {
+        padding: 1rem;
+    }
+
+    input[type="number"], select {
+        font-size: 0.8rem;
+    }
+
+    .back-button-arrow {
+        padding: 0.4rem 0.7rem;
+        font-size: 0.8rem;
+    }
+
+    .button, .back-button {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    input[type="submit"] {
+        padding: 0.6rem;
+        font-size: 0.8rem;
+    }
+}
+

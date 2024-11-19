@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+    <div class="container-result">
+        <h1>Prediction Result</h1>
+
+        <!-- Display the result dynamically -->
+        {% if result > 0.5 %}
+            <p class="at-risk">At Risk: {{ result * 100 }} %</p>
+        {% else %}
+            <p class="not-at-risk">Not At Risk: {{ result * 100 }} %</p>
+        {% endif %}
+
+        <!-- Display the SHAP explanation plot -->
+        <h2>Impact Features:</h2>
+        <img class="shap-plot-result" src="data:image/png;base64,{{ shap_plot }}" alt="SHAP Plot">
+
+        <!-- Back button -->
+        <a href="/input" class="back-button">Back to Input</a>
+    </div>
+</body>
+</html>
