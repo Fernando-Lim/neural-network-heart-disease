@@ -42,7 +42,3 @@ To set up and run the Flask project, follow these steps:
 4. **Features**  
    - **Heart Disease Risk Prediction**: Enter clinical parameters to get a risk prediction (e.g., age, blood pressure, cholesterol levels).  
    - **SHAP Visualization**: View a detailed explanation of how each parameter influences the prediction outcome.  
-
----
-
-Let me know if you’d like to include additional sections, such as a troubleshooting guide or specific examples of input and output!
