@@ -17,7 +17,7 @@ To set up and run the Flask project, follow these steps:
    ```  
 
 2. **Install Required Libraries**  
-   Ensure you have Python 3.8 or higher installed. Then, install the required Python packages:  
+   Ensure you have Python 3.8 or higher and graphviz installed. Then, install the required Python packages:  
    ```
    pip install -r requirements.txt  
    ```  
@@ -30,6 +30,7 @@ To set up and run the Flask project, follow these steps:
    pandas==2.0.0  
    shap==0.46.0  
    tensorflow==2.16.2  
+   pydot==2.0.0  
    ```  
 
 3. **Run the Flask Application**  
